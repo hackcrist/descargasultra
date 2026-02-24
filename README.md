@@ -84,6 +84,17 @@ descarga
 descarga
 ```
 
+## Update (Termux)
+
+When you already have the project cloned, update and reinstall with:
+
+```bash
+cd ~/descargasultra
+git pull
+chmod +x install.sh
+bash install.sh
+```
+
 ## How to Use the `descarga` Command
 
 Once installed, you can run it from any folder with:
