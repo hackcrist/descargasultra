@@ -50,6 +50,7 @@ pkg install -y git
 
 git clone https://github.com/hackcrist/descargasultra.git
 cd descargasultra
+chmod +x install.sh install_termux_command.sh
 bash install.sh
 ```
 
@@ -111,3 +112,4 @@ Crist
 ## Responsible Use
 
 Use this tool ethically and legally, respecting each platform's terms and policies.
+
