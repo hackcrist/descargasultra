@@ -26,12 +26,21 @@ Descargas Ultra es una herramienta de linea de comandos para descargar audio o v
 [0] Salir
 ```
 
-## Requisitos
+## Requisitos (Termux)
 
 - Python 3.8+
 - yt-dlp
 - colorama
 - ffmpeg (requerido para conversion de audio MP3)
+
+### Comandos de instalacion de requisitos (Termux)
+
+```bash
+pkg update && pkg upgrade -y
+pkg install -y python ffmpeg
+pip install --upgrade pip
+pip install yt-dlp colorama
+```
 
 ## Instalacion en Termux
 
@@ -62,27 +71,11 @@ descarga
 Flujo rapido de uso:
 
 1. Ejecuta `descarga`.
-2. Elige una opcion del menu:
-   - `1` YouTube Audio (MP3)
-   - `2` YouTube Video
-   - `3` TikTok
-   - `4` Facebook
-   - `5` Instagram
-   - `6` Activar/Desactivar Modo Hacker
-   - `7` Probar URL sin descargar
-   - `0` Salir
+2. Elige una opcion del menu.
 3. Pega la URL cuando el programa la pida.
 4. Espera la descarga y revisa la carpeta `~/DescargasUltra/<Plataforma>/`.
 
 Tip: usa primero la opcion `7` para validar enlaces antes de descargar.
-## Instalacion general (otros sistemas)
-
-```bash
-pip install -r requirements.txt
-python descargasultra.py
-```
-
-Asegurate de tener `ffmpeg` instalado y disponible en el PATH.
 
 ## Estructura de salida
 
@@ -118,5 +111,3 @@ Crist
 ## Uso responsable
 
 Usa esta herramienta de forma etica y legal, respetando los terminos y politicas de cada plataforma.
-
-
