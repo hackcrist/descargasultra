@@ -38,7 +38,6 @@ Descargas Ultra is a command-line tool to download audio or video from YouTube, 
 ```bash
 pkg update && pkg upgrade -y
 pkg install -y python ffmpeg
-pip install --upgrade pip
 pip install yt-dlp colorama
 ```
 
@@ -112,4 +111,5 @@ Crist
 ## Responsible Use
 
 Use this tool ethically and legally, respecting each platform's terms and policies.
+
 
