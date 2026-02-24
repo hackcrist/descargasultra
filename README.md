@@ -1,19 +1,19 @@
 ﻿# DESCARGAS ULTRA
 
-Descargas Ultra es una herramienta de linea de comandos para descargar audio o video desde YouTube, TikTok, Facebook e Instagram de forma simple y ordenada.
+Descargas Ultra is a command-line tool to download audio or video from YouTube, TikTok, Facebook, and Instagram in a simple and organized way.
 
-## Caracteristicas
+## Features
 
-- Menu interactivo en terminal.
-- Descarga de YouTube (audio MP3 o video).
-- Descarga de TikTok, Facebook e Instagram.
-- Validacion de URL por plataforma.
-- Prueba de URL sin descargar para validar enlaces.
-- Directorios de salida por plataforma en `~/DescargasUltra/`.
-- Modo Hacker opcional para ver el comando tecnico ejecutado.
-- Mensajes claros de estado y errores.
+- Interactive terminal menu.
+- YouTube download support (MP3 audio or video).
+- TikTok, Facebook, and Instagram downloads.
+- Platform-specific URL validation.
+- URL testing without downloading.
+- Output folders by platform in `~/DescargasUltra/`.
+- Optional Hacker Mode to show the technical command being executed.
+- Clear status and error messages.
 
-## Menu actual
+## Current Menu
 
 ```text
 [1] YouTube Audio
@@ -21,19 +21,19 @@ Descargas Ultra es una herramienta de linea de comandos para descargar audio o v
 [3] TikTok
 [4] Facebook
 [5] Instagram
-[6] Toggle Modo Hacker
-[7] Probar URL (sin descargar)
-[0] Salir
+[6] Toggle Hacker Mode
+[7] Test URL (without downloading)
+[0] Exit
 ```
 
-## Requisitos (Termux)
+## Requirements (Termux)
 
 - Python 3.8+
 - yt-dlp
 - colorama
-- ffmpeg (requerido para conversion de audio MP3)
+- ffmpeg (required for MP3 audio conversion)
 
-### Comandos de instalacion de requisitos (Termux)
+### Requirement Installation Commands (Termux)
 
 ```bash
 pkg update && pkg upgrade -y
@@ -42,7 +42,7 @@ pip install --upgrade pip
 pip install yt-dlp colorama
 ```
 
-## Instalacion en Termux
+## Installation on Termux
 
 ```bash
 pkg update && pkg upgrade -y
@@ -53,61 +53,61 @@ cd descargasultra
 bash install.sh
 ```
 
-## Uso en Termux
+## Usage on Termux
 
 ```bash
-# Desde cualquier carpeta
+# From any folder
 descarga
 ```
 
-## Como usar el comando `descarga`
+## How to Use the `descarga` Command
 
-Una vez instalado, puedes ejecutarlo desde cualquier carpeta con:
+Once installed, you can run it from any folder with:
 
 ```bash
 descarga
 ```
 
-Flujo rapido de uso:
+Quick usage flow:
 
-1. Ejecuta `descarga`.
-2. Elige una opcion del menu.
-3. Pega la URL cuando el programa la pida.
-4. Espera la descarga y revisa la carpeta `~/DescargasUltra/<Plataforma>/`.
+1. Run `descarga`.
+2. Choose an option from the menu.
+3. Paste the URL when prompted.
+4. Wait for the download and check `~/DescargasUltra/<Platform>/`.
 
-Tip: usa primero la opcion `7` para validar enlaces antes de descargar.
+Tip: use option `7` first to validate links before downloading.
 
-## Estructura de salida
+## Output Structure
 
-Las descargas se guardan en:
+Downloads are saved to:
 
 - `~/DescargasUltra/YouTube/`
 - `~/DescargasUltra/TikTok/`
 - `~/DescargasUltra/Facebook/`
 - `~/DescargasUltra/Instagram/`
 
-Formato de archivo de salida:
+Output filename format:
 
 ```text
 %(title).120B [%(id)s].%(ext)s
 ```
 
-## Seguridad y estabilidad
+## Security and Stability
 
-- Ejecucion de subprocess sin `shell=True`.
-- Bloqueo de hosts locales/privados en validacion de URL.
-- Reintentos y continuidad de descarga configurados.
-- Evita sobreescritura de archivos existentes.
+- Subprocess execution without `shell=True`.
+- Local/private host blocking in URL validation.
+- Download retries and continuation enabled.
+- Prevents overwriting existing files.
 
-## Licencia
+## License
 
-Este proyecto esta licenciado bajo Apache License 2.0.
-Consulta `LICENSE` y `NOTICE` para mas detalles.
+This project is licensed under Apache License 2.0.
+See `LICENSE` and `NOTICE` for details.
 
-## Autor
+## Author
 
 Crist
 
-## Uso responsable
+## Responsible Use
 
-Usa esta herramienta de forma etica y legal, respetando los terminos y politicas de cada plataforma.
+Use this tool ethically and legally, respecting each platform's terms and policies.
