@@ -24,7 +24,16 @@ else
 fi
 
 echo "[4/5] Installing global command..."
-bash "$REPO_DIR/install_termux_command.sh"
+PREFIX_DIR="${PREFIX:-/data/data/com.termux/files/usr}"
+TARGET="$PREFIX_DIR/bin/descarga"
+
+cat > "$TARGET" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+exec python "$REPO_DIR/descargasultra.py" "\$@"
+EOF
+
+chmod +x "$TARGET"
 
 echo "[5/5] Verifying installation..."
 if command -v descarga >/dev/null 2>&1; then

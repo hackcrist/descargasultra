@@ -46,7 +46,7 @@ pip install yt-dlp colorama
 Quick install:
 
 ```bash
-pkg update -y && pkg upgrade -y && pkg install -y git && git clone https://github.com/hackcrist/descargasultra.git && cd descargasultra && chmod +x install.sh && bash install.sh
+pkg update -y && pkg upgrade -y && pkg install -y git && ( [ -d descargasultra/.git ] && cd descargasultra && git pull || git clone https://github.com/hackcrist/descargasultra.git && cd descargasultra ) && chmod +x install.sh && bash install.sh
 ```
 
 Step by step:
@@ -64,7 +64,7 @@ bash install.sh
 If you get `syntax error: unexpected end of file`, convert line endings to LF and retry:
 
 ```bash
-sed -i 's/\r$//' install.sh install_termux_command.sh
+sed -i 's/\r$//' install.sh
 chmod +x install.sh
 bash install.sh
 ```
