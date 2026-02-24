@@ -1,69 +1,122 @@
-# DESCARGAS ULTRA 🚀
+﻿# DESCARGAS ULTRA
 
-**Descargas Ultra** es una herramienta de línea de comandos para descargar videos y audios desde YouTube, TikTok, Facebook e Instagram, con interfaz profesional y sencilla.
+Descargas Ultra es una herramienta de linea de comandos para descargar audio o video desde YouTube, TikTok, Facebook e Instagram de forma simple y ordenada.
 
----
+## Caracteristicas
 
-## Características
+- Menu interactivo en terminal.
+- Descarga de YouTube (audio MP3 o video).
+- Descarga de TikTok, Facebook e Instagram.
+- Validacion de URL por plataforma.
+- Prueba de URL sin descargar para validar enlaces.
+- Directorios de salida por plataforma en `~/DescargasUltra/`.
+- Modo Hacker opcional para ver el comando tecnico ejecutado.
+- Mensajes claros de estado y errores.
 
+## Menu actual
+
+```text
+[1] YouTube Audio
+[2] YouTube Video
+[3] TikTok
+[4] Facebook
+[5] Instagram
+[6] Toggle Modo Hacker
+[7] Probar URL (sin descargar)
+[0] Salir
 ```
-╔═══════════════════════════════════╗
-║           DESCARGAS ULTRA        ║
-╠═══════════════════════════════════╣
-║ 1) YouTube - Video HD            ║
-║ 2) YouTube - Solo Audio MP3      ║
-║ 3) TikTok Video                  ║
-║ 4) Facebook Público              ║
-║ 5) Instagram Video               ║
-║ 0) Salir                         ║
-╚═══════════════════════════════════╝
-```
-
-- Descargas rápidas y limpias  
-- Mensajes claros de éxito o error  
-- Interfaz colorida y profesional  
-
----
 
 ## Requisitos
 
-- Python 3.7+  
-- yt-dlp  
-- ffmpeg  
-- colorama  
+- Python 3.8+
+- yt-dlp
+- colorama
+- ffmpeg (requerido para conversion de audio MP3)
 
-Instala con:
+## Instalacion en Termux
 
 ```bash
-pip install yt-dlp colorama
+pkg update && pkg upgrade -y
+pkg install -y git
+
+git clone https://github.com/hackcrist/descargasultra.git
+cd descargasultra
+bash install.sh
 ```
 
-Asegúrate de tener ffmpeg instalado y en el PATH.
-
----
-
-## Uso
+## Uso en Termux
 
 ```bash
+# Desde cualquier carpeta
+descarga
+```
+
+## Como usar el comando `descarga`
+
+Una vez instalado, puedes ejecutarlo desde cualquier carpeta con:
+
+```bash
+descarga
+```
+
+Flujo rapido de uso:
+
+1. Ejecuta `descarga`.
+2. Elige una opcion del menu:
+   - `1` YouTube Audio (MP3)
+   - `2` YouTube Video
+   - `3` TikTok
+   - `4` Facebook
+   - `5` Instagram
+   - `6` Activar/Desactivar Modo Hacker
+   - `7` Probar URL sin descargar
+   - `0` Salir
+3. Pega la URL cuando el programa la pida.
+4. Espera la descarga y revisa la carpeta `~/DescargasUltra/<Plataforma>/`.
+
+Tip: usa primero la opcion `7` para validar enlaces antes de descargar.
+## Instalacion general (otros sistemas)
+
+```bash
+pip install -r requirements.txt
 python descargasultra.py
 ```
 
-Sigue las instrucciones del menú.
+Asegurate de tener `ffmpeg` instalado y disponible en el PATH.
 
----
+## Estructura de salida
 
-## Notas
+Las descargas se guardan en:
 
-Usa esta herramienta de forma ética y legal, respetando las políticas de cada plataforma.
+- `~/DescargasUltra/YouTube/`
+- `~/DescargasUltra/TikTok/`
+- `~/DescargasUltra/Facebook/`
+- `~/DescargasUltra/Instagram/`
 
----
+Formato de archivo de salida:
+
+```text
+%(title).120B [%(id)s].%(ext)s
+```
+
+## Seguridad y estabilidad
+
+- Ejecucion de subprocess sin `shell=True`.
+- Bloqueo de hosts locales/privados en validacion de URL.
+- Reintentos y continuidad de descarga configurados.
+- Evita sobreescritura de archivos existentes.
+
+## Licencia
+
+Este proyecto esta licenciado bajo Apache License 2.0.
+Consulta `LICENSE` y `NOTICE` para mas detalles.
 
 ## Autor
 
-**Crist**
+Crist
 
----
+## Uso responsable
 
-## Apoya el proyecto
+Usa esta herramienta de forma etica y legal, respetando los terminos y politicas de cada plataforma.
 
-Si te gusta, por favor dale una ⭐ en GitHub.
+
